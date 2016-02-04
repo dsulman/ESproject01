@@ -10,6 +10,7 @@ public class MessageParserTest {
 	
 	MessageParser messageParser = new MessageParser("@franky goes to #hollywood. See http://cnn.com. Your message parser must be able to support interfaces");
 	
+	//Check if the length of the tweet is correct
 	@Test
 	public void testValidate(){
 		assertEquals(true, messageParser.validate());
