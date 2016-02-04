@@ -11,32 +11,33 @@ public class MessageParser {
 		parser = new Parser(message);
 	}
 	
+	//Check the length of the tweet and if it is equal or less then 140 chars it gets the URI, comment and person comment
+	
 	public void validate(){
 		if (message.length() > 140){
 			System.out.println("The message is bigger then the maximum length");
 		}
 		else{
-			parser.getURI();
-			parser.getComment();
-			parser.getPersonComment();
+			URI = parser.getURI();
+			comment = parser.getComment();
+			personComment =parser.getPersonComment();
 		}
 	}
-	//Find the regexes
 
 	public String getURI() {
 		
-		return null;
+		return URI;
 	}
 
 	public String getComment() {
 		
-		return null;
+		return comment;
 	}
 
 	public String getPersonComment() {
 		
-		return null;
+		return personComment;
 	}
 
-	//Involking the parser
+	
 }
