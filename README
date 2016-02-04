@@ -6,7 +6,7 @@ The MessageParser is responsible to check if all the rules are being respected, 
 
 The parser has only one job, which is recover the parameters from the tweet, these parameters can be an URI a comment or a person comment.
 
-URI's (Uniform Resource Identifier) is used to link another websites.
+URL's (Uniform Resource Locator) is used to link another websites.
 
 Comments (Identified with '#' are used to comment about an specific topic.
 
