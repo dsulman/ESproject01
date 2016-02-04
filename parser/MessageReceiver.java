@@ -3,9 +3,9 @@ package parser;
 public class MessageReceiver {
 	
 	final String message;
-	final String URI;
-	final String comment;
-	final String personComment;
+	String URI;
+	String comment;
+	String personComment;
 	
 	public MessageReceiver(final String message){
 		this.message = message;
@@ -14,15 +14,13 @@ public class MessageReceiver {
 		this.personComment = null;
 	}
 	
-	public void validate(){
-		//Max length of the tweet
-		if (message.length() > 140){
-			System.out.println("The message is bigger then the maximum length");
-		}
-		//If it has the valid lenght, then start parsing
-		else{
-			MessageParser messageParser = new MessageParser(message);
-			
-		}
+	//This method will validate the tweet and extract the regex (expressions)
+	public void getParameters(){
+		
+		MessageParser messageParser = new MessageParser(message);
+		URI = messageParser.getURI();
+		comment = messageParser.getComment();
+		personComment = messageParser.getPersonComment();
+		
 	}
 }
