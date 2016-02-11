@@ -7,20 +7,28 @@ public class MessageReceiver {
 	String comment;
 	String personComment;
 	
-	public MessageReceiver(final String message){
-		this.message = message;
-		this.URI = null;
-		this.comment = null;
-		this.personComment = null;
+	public MessageReceiver(){
+		this.message = "@franky goes to #hollywood. See http://cnn.com.";
+	}
+	
+	public static void main(String args[]){
+		
+		MessageReceiver MR = new MessageReceiver();
+		
+		MR.getParameters();
+		
+		System.out.println(MR.URI);
+		System.out.println(MR.comment);
+		System.out.println(MR.personComment);
 	}
 	
 	//This method will validate the tweet and extract the regex (expressions)
 	public void getParameters(){
 		
-		MessageParser messageParser = new MessageParser(message);
-		URI = messageParser.getURI();
-		comment = messageParser.getComment();
-		personComment = messageParser.getPersonComment();
+		Parser parser = new Parser(message);
+		URI = parser.getURI();
+		comment = parser.getComment();
+		personComment = parser.getPersonComment();
 		
 	}
 }

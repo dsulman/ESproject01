@@ -14,24 +14,40 @@ public class Parser {
 	}
 	
 	public String getURI(){
-		Pattern p = Pattern.compile("(http:)");
+		
+		String URI = "";
+		Pattern p = Pattern.compile("((http|https)://[^\\s]*)");
 		Matcher m = p.matcher(tweet);
 		
-		return m.group();
+		if(m.find()){
+			URI = m.group();
+		}
+		
+		return URI;
 	}
 	
 	public String getComment(){
-		Pattern p = Pattern.compile("(@?)");
+		
+		String comment = " ";
+		Pattern p = Pattern.compile("(#[^\\s]*)");
 		Matcher m = p.matcher(tweet);
 		
-		return m.group();
+		if(m.find()){
+			comment = m.group();
+		}
+		return comment;
 	}
 	
 	public String getPersonComment(){
-		Pattern p = Pattern.compile("");
+		
+		String person = " ";
+		Pattern p = Pattern.compile("@[^\\s]*");
 		Matcher m = p.matcher(tweet);
 		
-		return m.group();
+		if(m.find()){
+			person = m.group();
+		}
+		return person;
 	}
 	
 }
